@@ -1,14 +1,15 @@
 import SwiftUI
 
 struct ContentView: View {
+
     var body: some View {
         TabView {
             Tab("Breaking Bad", systemImage: "tortoise") {
-                Text("Breaking Bad View")
+                QuoteView(show: "Breaking Bad")
             }
             
             Tab("Better call saul", systemImage: "briefcase") {
-                Text("Better call saul View")
+                QuoteView(show: "Better Call Saul")
             }
         }
         .preferredColorScheme(.dark)

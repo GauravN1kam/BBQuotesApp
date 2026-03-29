@@ -60,7 +60,7 @@ struct FetchService {
         let deaths = try decoder.decode([Death].self, from: data)
         
         for death in deaths {
-            if death.charactor.lowercased() == character.lowercased() {
+            if death.character.lowercased() == character.lowercased() {
                 return death
             }
         }
