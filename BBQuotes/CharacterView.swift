@@ -33,11 +33,33 @@ struct CharacterView: View {
                         
                         Divider()
                         
+                        Text("Occupation:")
+                        
+                        ForEach(character.occupations, id: \.self) { occupation in
+                            Text("• \(occupation)")
+                                .font(.subheadline)
+                        }
+                        
+                        Divider()
+                        Text("Nicknames:")
+                        if character.aliases.count > 0 {
+                            ForEach(character.aliases, id: \.self) { alias in
+                                Text("• \(alias)")
+                                    .font(.subheadline)
+                            }
+                        } else {
+                            Text("None")
+                                .font(.subheadline)
+                        }
+                        
+                        Divider()
+                        
                         
                     }
                     .frame(width: geo.size.width / 1.25, alignment: .leading)
                     
                 }
+                .scrollIndicators(.hidden)
             }
         }
         .ignoresSafeArea()
