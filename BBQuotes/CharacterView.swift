@@ -58,6 +58,23 @@ struct CharacterView: View {
                             VStack(alignment: .leading) {
                                 Text(character.status)
                                     .font(.title2)
+                                
+                                if let death = character.death {
+                                    AsyncImage(url: death.image) { image in
+                                        image
+                                            .resizable()
+                                            .scaledToFit()
+                                            .clipShape(.rect(cornerRadius: 15))
+                                        
+                                    } placeholder: {
+                                        ProgressView()
+                                    }
+                                    
+                                    Text("How: \(death.details)")
+                                        .padding(.bottom, 7)
+                                    
+                                    Text("Last Words: \"\(death.lastWords)\"")
+                                }
                             }
                             .frame(maxWidth: .infinity, alignment: .leading)
                         }
