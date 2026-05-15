@@ -1,5 +1,4 @@
 import Foundation
-
 struct Char: Decodable {
     let name: String
     let birthday: String
